@@ -1,4 +1,4 @@
-# i used basic python to make a quiz game
+# i used python to make a quiz game
 Thing's I've learned 
         1) Basic syntax 
         2)variable
