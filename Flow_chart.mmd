@@ -1,0 +1,47 @@
+flowchart TD
+    Start([START PROGRAM])
+    Welcome["Print Welcome Message<br/>welcome to my computer quiz!"]
+    Ask["Ask User: do you want to play?"]
+    Check{"User Input == yes?"}
+    
+    NoPath["Program Ends"]
+    YesMsg["Print: okay! let's play :)<br/>Set Score = 0"]
+    
+    Q1["Question 1: What does CPU stand for?"]
+    A1Check{"Answer == central processing unit?"}
+    
+    Q1Yes["Print: correct!<br/>Score += 1"]
+    Q1No["Print: incorrect!"]
+    
+    Q2["Question 2: GPU"]
+    Q3["Question 3: RAM"]
+    Q4["Question 4: ROM"]
+    Q5["Question 5: PSU"]
+    
+    Calculate["Calculate Final Score<br/>Print Total Correct Out of 5<br/>Print Percentage Score"]
+    End([END PROGRAM])
+    
+    Start --> Welcome
+    Welcome --> Ask
+    Ask --> Check
+    
+    Check -->|NO| NoPath
+    Check -->|YES| YesMsg
+    
+    YesMsg --> Q1
+    Q1 --> A1Check
+    
+    A1Check -->|YES| Q1Yes
+    A1Check -->|NO| Q1No
+    
+    Q1Yes --> Q2
+    Q1No --> Q2
+    
+    Q2 --> Q3
+    Q3 --> Q4
+    Q4 --> Q5
+    
+    Q5 --> Calculate
+    
+    NoPath --> End
+    Calculate --> End
